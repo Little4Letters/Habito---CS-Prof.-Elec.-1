@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 export default function HomeScreen() {
   return (
+    // This is the container for the entire screen on the top near the header, with padding and background color as a
     <View style={styles.container}>
       <View style={styles.header}>
         <View>
@@ -34,6 +35,7 @@ export default function HomeScreen() {
   );
 }
 
+// The sheet for designing the container as flexbox, background color, padding, and other styles for the header, greeting, weather, calendar button, date strip, and date cards.
 const styles = StyleSheet.create({
   container: {
     flex: 1,
