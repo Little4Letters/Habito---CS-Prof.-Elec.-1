@@ -1,4 +1,10 @@
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 
 export default function AddHabitScrn() {
   return (
@@ -21,6 +27,15 @@ export default function AddHabitScrn() {
           placeholder="e.g., Every Day"
           placeholderTextColor="#8A8A8E"
         />
+      </View>
+
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.cancelButton}>
+          <Text style={styles.cancelButtonText}>Cancel</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.saveButton}>
+          <Text style={styles.saveButtonText}>Save Habit</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
