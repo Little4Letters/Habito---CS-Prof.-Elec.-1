@@ -70,5 +70,15 @@ const styles = StyleSheet.create({
       justifyContent: "space-between",
       marginTop: 20,
     },
+
+    cancelButton: {
+      flex: 1,
+      padding: 16,
+      backgroundColor: "#E5E5EA",
+      borderRadius: 12,
+      marginRight: 10,
+      alignItems: "center",
+    },
+    cancelButtonText: { color: "#1E1E1E", fontWeight: "bold", fontSize: 16 },
   },
 });
