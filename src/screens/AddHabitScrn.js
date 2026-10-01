@@ -1,9 +1,15 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
 export default function AddHabitScrn() {
   return (
-    <View>
-      <Text>Add Habit Screen</Text>
+    <View style={styles.container}>
+      <Text style={styles.headerTitle}>Create New Routine</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
