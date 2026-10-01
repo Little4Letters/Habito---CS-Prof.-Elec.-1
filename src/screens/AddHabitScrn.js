@@ -39,4 +39,5 @@ const styles = StyleSheet.create({
     color: "#1E1E1E",
     marginBottom: 30,
   },
+  formGroup: { marginBottom: 20 },
 });
