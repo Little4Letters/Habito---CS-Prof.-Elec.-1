@@ -11,5 +11,14 @@ export default function AddHabitScrn() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#F8F9FB",
+    paddingTop: 60,
+    paddingHorizontal: 20,
+  },
+  headerTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#1E1E1E",
+    marginBottom: 30,
   },
 });
