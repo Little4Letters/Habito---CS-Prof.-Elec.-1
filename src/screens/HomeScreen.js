@@ -34,6 +34,16 @@ export default function HomeScreen() {
         </View>
       </View>
 
+      <View style={[styles.sectionHeader, { marginTop: 20 }]}>
+        <Text style={styles.sectionTitle}>Completed</Text>
+      </View>
+
+      <HabitSec
+        title="8 Hours of Sleep"
+        frequency="Everyday or Seldom"
+        isCompleted={true}
+      />
+
       <View style={styles.sectionHeader}>
         <Text style={styles.sectionTitle}>Upcoming Habits</Text>
         <Text style={styles.manageText}>Manage</Text>
