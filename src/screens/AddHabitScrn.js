@@ -13,6 +13,7 @@ export default function AddHabitScrn() {
 
       <View style={styles.formGroup}>
         <Text style={styles.label}>Habit Name</Text>
+
         <TextInput
           style={styles.input}
           placeholder="e.g., Morning Meditation"
@@ -22,6 +23,7 @@ export default function AddHabitScrn() {
 
       <View style={styles.formGroup}>
         <Text style={styles.label}>Frequency (Daily Basis)</Text>
+
         <TextInput
           style={styles.input}
           placeholder="e.g., Every Day"
@@ -33,6 +35,7 @@ export default function AddHabitScrn() {
         <TouchableOpacity style={styles.cancelButton}>
           <Text style={styles.cancelButtonText}>Cancel</Text>
         </TouchableOpacity>
+
         <TouchableOpacity style={styles.saveButton}>
           <Text style={styles.saveButtonText}>Save Habit</Text>
         </TouchableOpacity>
@@ -48,6 +51,7 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     paddingHorizontal: 20,
   },
+
   headerTitle: {
     fontSize: 24,
     fontWeight: "bold",

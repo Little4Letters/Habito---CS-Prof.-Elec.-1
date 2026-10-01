@@ -12,6 +12,7 @@ export default function HomeScreen() {
           <Text style={styles.greeting}>
             Good <Text style={styles.greetingHighlight}>Afternoon</Text>
           </Text>
+
           <Text style={styles.weather}>🌤 32 °C</Text>
         </View>
         <TouchableOpacity style={styles.calendarButton}>
@@ -28,6 +29,7 @@ export default function HomeScreen() {
           <Text style={[styles.dayText, styles.textWhite]}>Mon</Text>
           <Text style={[styles.dateNum, styles.textWhite]}>24</Text>
         </View>
+
         <View style={styles.dateCard}>
           <Text style={styles.dayText}>Tue</Text>
           <Text style={styles.dateNum}>25</Text>
@@ -46,11 +48,15 @@ export default function HomeScreen() {
 
       <View style={styles.sectionHeader}>
         <Text style={styles.sectionTitle}>Upcoming Habits</Text>
-        <Text style={styles.manageText}>Manage</Text>
+        <Text style={styles.manageText}>Manage it Now!</Text>
       </View>
 
       <HabitSec title="Jogging" frequency="Every Day" color="#4DA8DA" />
-      <HabitSec title="Tennis" frequency="Monday, Thursday" color="#FFA07A" />
+      <HabitSec
+        title="Reading Novels"
+        frequency="Everyday or Seldom"
+        color="#FFA07A"
+      />
       <HabitSec title="8 Hour Sleep" frequency="Everyday" color="#9B59B6" />
     </View>
   );
