@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TextInput } from "react-native";
 
 export default function AddHabitScrn() {
   return (
@@ -40,4 +40,14 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   formGroup: { marginBottom: 20 },
+
+  label: { fontSize: 14, color: "#1E1E1E", fontWeight: "600", marginBottom: 8 },
+  input: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 12,
+    padding: 16,
+    fontSize: 16,
+    borderWidth: 1,
+    borderColor: "#E5E5EA",
+  },
 });
