@@ -1,18 +1,42 @@
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
-export default function HabitCard({ title, frequency, color }) {
+export default function HabitCard({ title, frequency, color, isCompleted }) {
   return (
-    <View style={[styles.card, { backgroundColor: color }]}>
+    <View
+      style={[
+        styles.card,
+        isCompleted ? styles.cardCompleted : { backgroundColor: color },
+      ]}
+    >
       <View style={styles.leftContent}>
-        <View style={styles.iconPlaceholder}>
-          <Text style={styles.iconText}>★</Text>
+        <View
+          style={[
+            styles.iconPlaceholder,
+            isCompleted && styles.iconPlaceholderCompleted,
+          ]}
+        >
+          <Text
+            style={isCompleted ? styles.iconTextCompleted : styles.iconText}
+          >
+            ★
+          </Text>
         </View>
         <View>
-          <Text style={styles.title}>{title}</Text>
-          <Text style={styles.frequency}>{frequency}</Text>
+          <Text style={[styles.title, isCompleted && styles.titleCompleted]}>
+            {title}
+          </Text>
+          <Text
+            style={[styles.frequency, isCompleted && styles.frequencyCompleted]}
+          >
+            {frequency}
+          </Text>
         </View>
       </View>
-      <TouchableOpacity style={styles.checkCircle}></TouchableOpacity>
+      <TouchableOpacity
+        style={[styles.checkCircle, isCompleted && styles.checkCircleCompleted]}
+      >
+        {isCompleted && <Text style={{ color: "#FFF" }}>✓</Text>}
+      </TouchableOpacity>
     </View>
   );
 }
@@ -26,6 +50,11 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginBottom: 12,
   },
+  cardCompleted: {
+    backgroundColor: "#FFFFFF",
+    borderWidth: 1,
+    borderColor: "#E5E5EA",
+  },
   leftContent: { flexDirection: "row", alignItems: "center" },
   iconPlaceholder: {
     width: 40,
@@ -36,14 +65,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginRight: 16,
   },
+  iconPlaceholderCompleted: { backgroundColor: "#F0F0F0" },
   iconText: { color: "#FFFFFF", fontSize: 18 },
+  iconTextCompleted: { color: "#FF6F61", fontSize: 18 },
   title: { fontSize: 16, fontWeight: "bold", color: "#FFFFFF" },
+  titleCompleted: { color: "#1E1E1E" },
   frequency: { fontSize: 12, color: "rgba(255,255,255,0.8)", marginTop: 4 },
+  frequencyCompleted: { color: "#8A8A8E" },
   checkCircle: {
     width: 28,
     height: 28,
     borderRadius: 14,
     borderWidth: 2,
     borderColor: "rgba(255,255,255,0.5)",
+  },
+  checkCircleCompleted: {
+    backgroundColor: "#1E1E1E",
+    borderColor: "#1E1E1E",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
