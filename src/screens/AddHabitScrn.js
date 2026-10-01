@@ -4,6 +4,24 @@ export default function AddHabitScrn() {
   return (
     <View style={styles.container}>
       <Text style={styles.headerTitle}>Create New Routine</Text>
+
+      <View style={styles.formGroup}>
+        <Text style={styles.label}>Habit Name</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="e.g., Morning Meditation"
+          placeholderTextColor="#8A8A8E"
+        />
+      </View>
+
+      <View style={styles.formGroup}>
+        <Text style={styles.label}>Frequency (Daily Basis)</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="e.g., Every Day"
+          placeholderTextColor="#8A8A8E"
+        />
+      </View>
     </View>
   );
 }
