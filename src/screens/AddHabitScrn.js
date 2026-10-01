@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
   formGroup: { marginBottom: 20 },
 
   label: { fontSize: 14, color: "#1E1E1E", fontWeight: "600", marginBottom: 8 },
+
   input: {
     backgroundColor: "#FFFFFF",
     borderRadius: 12,
@@ -79,6 +80,18 @@ const styles = StyleSheet.create({
       marginRight: 10,
       alignItems: "center",
     },
+
     cancelButtonText: { color: "#1E1E1E", fontWeight: "bold", fontSize: 16 },
+
+    saveButton: {
+      flex: 1,
+      padding: 16,
+      backgroundColor: "#FF6F61",
+      borderRadius: 12,
+      marginLeft: 10,
+      alignItems: "center",
+    },
+
+    saveButtonText: { color: "#FFFFFF", fontWeight: "bold", fontSize: 16 },
   },
 });
