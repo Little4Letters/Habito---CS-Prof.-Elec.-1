@@ -58,3 +58,50 @@ export default function AlertsScreen() {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  safeArea: { flex: 1, backgroundColor: "#F7F7F8" },
+  screenContent: { paddingTop: 18, paddingHorizontal: 21, paddingBottom: 126 },
+  pageEyebrow: {
+    color: "#E36F80",
+    fontSize: 10,
+    fontWeight: "800",
+    letterSpacing: 1.1,
+    marginBottom: 7,
+  },
+  pageTitle: {
+    color: "#252630",
+    fontSize: 29,
+    fontWeight: "800",
+    marginBottom: 23,
+  },
+  sectionTitle: {
+    color: "#33343D",
+    fontSize: 14,
+    fontWeight: "700",
+    marginBottom: 14,
+  },
+  alertHighlight: {
+    minHeight: 83,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 13,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 15,
+    padding: 15,
+    marginBottom: 28,
+  },
+  alertIcon: {
+    width: 46,
+    height: 46,
+    borderRadius: 14,
+    backgroundColor: "#FFF0F2",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  alertHighlightCopy: { flex: 1 },
+  alertHighlightTitle: { color: "#292A34", fontSize: 14, fontWeight: "700" },
+  alertHighlightDetail: { color: "#85858D", fontSize: 11, marginTop: 5 },
+  alertSectionTitle: { marginTop: 16 },
+  localNote: { color: "#9A9AA2", fontSize: 11, lineHeight: 16, marginTop: 21 },
+});
