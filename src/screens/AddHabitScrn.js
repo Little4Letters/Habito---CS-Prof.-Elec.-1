@@ -26,7 +26,7 @@ export default function AddHabitScrn() {
 
         <TextInput
           style={styles.input}
-          placeholder="e.g., Every Day"
+          placeholder="e.g., Every Day or Seldom"
           placeholderTextColor="#8A8A8E"
         />
       </View>
@@ -83,9 +83,14 @@ const styles = StyleSheet.create({
       borderRadius: 12,
       marginRight: 10,
       alignItems: "center",
+      marginBottom: 100,
     },
 
-    cancelButtonText: { color: "#1E1E1E", fontWeight: "bold", fontSize: 16 },
+    cancelButtonText: {
+      color: "#1E1E1E",
+      fontWeight: "bold",
+      fontSize: 25,
+    },
 
     saveButton: {
       flex: 1,

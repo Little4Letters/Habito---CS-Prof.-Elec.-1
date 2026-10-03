@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
   },
 
   leftContent: { flexDirection: "row", alignItems: "center" },
+
   iconPlaceholder: {
     width: 40,
     height: 40,
