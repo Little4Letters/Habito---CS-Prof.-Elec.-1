@@ -1,18 +1,23 @@
+import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import HabitSec from "../components/HabitsSec.js";
-
-// Added containers for emphasis and better design. The code is now more organized and visually appealing para goods.
-// Icon for style.weather is tikang sa google inspired by Dribble HAHAHHA nag pahelp lang
+import HabitCard from "../components/HabitsSec.js";
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
+      <View style={[styles.sectionHeader, { marginTop: 20 }]}>
+        <Text style={styles.sectionTitle}>Completed</Text>
+      </View>
+      <HabitCard
+        title="8 Hours Sleep"
+        frequency="Everyday"
+        sectionCompleted={true}
+      />
       <View style={styles.header}>
         <View>
           <Text style={styles.greeting}>
             Good <Text style={styles.greetingHighlight}>Afternoon</Text>
           </Text>
-
           <Text style={styles.weather}>🌤 32 °C</Text>
         </View>
         <TouchableOpacity style={styles.calendarButton}>
@@ -29,40 +34,24 @@ export default function HomeScreen() {
           <Text style={[styles.dayText, styles.textWhite]}>Mon</Text>
           <Text style={[styles.dateNum, styles.textWhite]}>24</Text>
         </View>
-
         <View style={styles.dateCard}>
           <Text style={styles.dayText}>Tue</Text>
           <Text style={styles.dateNum}>25</Text>
         </View>
       </View>
 
-      <View style={[styles.sectionHeader, { marginTop: 20 }]}>
-        <Text style={styles.sectionTitle}>Completed</Text>
-      </View>
-
-      <HabitSec
-        title="8 Hours of Sleep"
-        frequency="Everyday or Seldom"
-        isCompleted={true}
-      />
-
       <View style={styles.sectionHeader}>
         <Text style={styles.sectionTitle}>Upcoming Habits</Text>
-        <Text style={styles.manageText}>Manage it Now!</Text>
+        <Text style={styles.manageText}>Manage</Text>
       </View>
 
-      <HabitSec title="Jogging" frequency="Every Day" color="#4DA8DA" />
-      <HabitSec
-        title="Reading Novels"
-        frequency="Everyday or Seldom"
-        color="#FFA07A"
-      />
-      <HabitSec title="8 Hour Sleep" frequency="Everyday" color="#9B59B6" />
+      <HabitCard title="Jogging" frequency="Every Day" color="#4DA8DA" />
+      <HabitCard title="Tennis" frequency="Monday, Thursday" color="#FFA07A" />
+      <HabitCard title="8 Hour Sleep" frequency="Everyday" color="#9B59B6" />
     </View>
   );
 }
 
-// Basic pala dd an design kalma HAHAHAHA
 const styles = StyleSheet.create({
   container: {
     flex: 1,

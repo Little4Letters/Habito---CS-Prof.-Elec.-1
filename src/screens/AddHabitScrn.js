@@ -1,9 +1,10 @@
+import React from "react";
 import {
   View,
   Text,
-  StyleSheet,
   TextInput,
   TouchableOpacity,
+  StyleSheet,
 } from "react-native";
 
 export default function AddHabitScrn() {
@@ -13,7 +14,6 @@ export default function AddHabitScrn() {
 
       <View style={styles.formGroup}>
         <Text style={styles.label}>Habit Name</Text>
-
         <TextInput
           style={styles.input}
           placeholder="e.g., Morning Meditation"
@@ -22,11 +22,10 @@ export default function AddHabitScrn() {
       </View>
 
       <View style={styles.formGroup}>
-        <Text style={styles.label}>Frequency (Daily Basis)</Text>
-
+        <Text style={styles.label}>Frequency</Text>
         <TextInput
           style={styles.input}
-          placeholder="e.g., Every Day or Seldom"
+          placeholder="e.g., Every Day"
           placeholderTextColor="#8A8A8E"
         />
       </View>
@@ -35,7 +34,6 @@ export default function AddHabitScrn() {
         <TouchableOpacity style={styles.cancelButton}>
           <Text style={styles.cancelButtonText}>Cancel</Text>
         </TouchableOpacity>
-
         <TouchableOpacity style={styles.saveButton}>
           <Text style={styles.saveButtonText}>Save Habit</Text>
         </TouchableOpacity>
@@ -51,7 +49,6 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     paddingHorizontal: 20,
   },
-
   headerTitle: {
     fontSize: 24,
     fontWeight: "bold",
@@ -59,9 +56,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   formGroup: { marginBottom: 20 },
-
   label: { fontSize: 14, color: "#1E1E1E", fontWeight: "600", marginBottom: 8 },
-
   input: {
     backgroundColor: "#FFFFFF",
     borderRadius: 12,
@@ -69,38 +64,28 @@ const styles = StyleSheet.create({
     fontSize: 16,
     borderWidth: 1,
     borderColor: "#E5E5EA",
-
-    buttonContainer: {
-      flexDirection: "row",
-      justifyContent: "space-between",
-      marginTop: 20,
-    },
-
-    cancelButton: {
-      flex: 1,
-      padding: 16,
-      backgroundColor: "#E5E5EA",
-      borderRadius: 12,
-      marginRight: 10,
-      alignItems: "center",
-      marginBottom: 100,
-    },
-
-    cancelButtonText: {
-      color: "#1E1E1E",
-      fontWeight: "bold",
-      fontSize: 25,
-    },
-
-    saveButton: {
-      flex: 1,
-      padding: 16,
-      backgroundColor: "#FF6F61",
-      borderRadius: 12,
-      marginLeft: 10,
-      alignItems: "center",
-    },
-
-    saveButtonText: { color: "#FFFFFF", fontWeight: "bold", fontSize: 16 },
   },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 20,
+  },
+  cancelButton: {
+    flex: 1,
+    padding: 16,
+    backgroundColor: "#E5E5EA",
+    borderRadius: 12,
+    marginRight: 10,
+    alignItems: "center",
+  },
+  cancelButtonText: { color: "#1E1E1E", fontWeight: "bold", fontSize: 16 },
+  saveButton: {
+    flex: 1,
+    padding: 16,
+    backgroundColor: "#FF6F61",
+    borderRadius: 12,
+    marginLeft: 10,
+    alignItems: "center",
+  },
+  saveButtonText: { color: "#FFFFFF", fontWeight: "bold", fontSize: 16 },
 });
