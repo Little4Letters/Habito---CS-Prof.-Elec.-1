@@ -118,3 +118,52 @@ function CustomTabBar({ state, navigation }) {
     </View>
   );
 }
+
+function HabitTabs() {
+  const [habits, setHabits] = useState(startingHabits);
+  const toggleHabit = (habitId) => {
+    setHabits((current) =>
+      current.map((habit) =>
+        habit.id === habitId
+          ? { ...habit, completed: !habit.completed }
+          : habit,
+      ),
+    );
+  };
+  const addHabit = (habit) => setHabits((current) => [...current, habit]);
+
+  return (
+    <Tab.Navigator
+      tabBar={(props) => <CustomTabBar {...props} />}
+      screenOptions={{
+        headerShown: false,
+        sceneStyle: { backgroundColor: "#F7F7F8" },
+      }}
+    >
+      <Tab.Screen name="Home">
+        {(props) => (
+          <HomeScreen {...props} habits={habits} onToggleHabit={toggleHabit} />
+        )}
+      </Tab.Screen>
+      <Tab.Screen name="Progress">
+        {(props) => <ProgressScreen {...props} habits={habits} />}
+      </Tab.Screen>
+      <Tab.Screen name="Add">
+        {(props) => <AddHabitScrn {...props} onAddHabit={addHabit} />}
+      </Tab.Screen>
+      <Tab.Screen name="Alerts" component={AlertsScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
+    </Tab.Navigator>
+  );
+}
+
+export default function App() {
+  return (
+    <SafeAreaProvider>
+      <StatusBar style="dark" />
+      <NavigationContainer>
+        <HabitTabs />
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
+}
