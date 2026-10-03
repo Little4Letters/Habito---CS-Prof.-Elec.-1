@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ReminderRow from "../components/ReminderSec.js";
@@ -21,13 +28,13 @@ export default function ProfileScreen() {
             <Text style={styles.profileName}>Habit Builder</Text>
             <Text style={styles.profileSubtitle}>Small steps, every day</Text>
           </View>
-          <Pressable
+          <TouchableOpacity
             accessibilityRole="button"
             accessibilityLabel="Edit profile"
             style={styles.editButton}
           >
             <Ionicons name="create-outline" size={20} color="#62636C" />
-          </Pressable>
+          </TouchableOpacity>
         </View>
         <View style={styles.profileStats}>
           <View style={styles.profileStat}>
@@ -62,7 +69,7 @@ export default function ProfileScreen() {
           value={quietMode}
           onChange={setQuietMode}
         />
-        <Pressable
+        <TouchableOpacity
           accessibilityRole="button"
           onPress={() => {}}
           style={styles.profileLink}
@@ -72,7 +79,7 @@ export default function ProfileScreen() {
           </View>
           <Text style={styles.profileLinkText}>Help and support</Text>
           <Ionicons name="chevron-forward" size={17} color="#96969E" />
-        </Pressable>
+        </TouchableOpacity>
         <Text style={styles.localNote}>
           This profile is a visual preview. Your information stays on this
           screen.

@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -59,3 +65,56 @@ const tabIcons = {
   Alerts: ["notifications-outline", "notifications"],
   Profile: ["person-outline", "person"],
 };
+
+function CustomTabBar({ state, navigation }) {
+  const insets = useSafeAreaInsets();
+
+  return (
+    <View style={[styles.tabDockPosition, { bottom: insets.bottom + 10 }]}>
+      <View style={styles.tabDock}>
+        {state.routes.map((route, index) => {
+          const focused = state.index === index;
+          const [inactiveIcon, activeIcon] = tabIcons[route.name];
+          const isAdd = route.name === "Add";
+          const iconColor = isAdd ? "#FFFFFF" : focused ? "#22232D" : "#A1A1AD";
+
+          return (
+            <TouchableOpacity
+              key={route.key}
+              accessibilityRole="button"
+              accessibilityLabel={
+                route.name === "Add" ? "Add habit" : route.name
+              }
+              accessibilityState={focused ? { selected: true } : {}}
+              onPress={() => {
+                const event = navigation.emit({
+                  type: "tabPress",
+                  target: route.key,
+                  canPreventDefault: true,
+                });
+                if (!focused && !event.defaultPrevented)
+                  navigation.navigate(route.name);
+              }}
+              style={styles.tabButton}
+              hitSlop={8}
+            >
+              <View
+                style={[
+                  styles.tabIconHit,
+                  focused && !isAdd && styles.tabIconSelected,
+                  isAdd && styles.addTabButton,
+                ]}
+              >
+                <Ionicons
+                  name={focused ? activeIcon : inactiveIcon}
+                  size={isAdd ? 27 : 21}
+                  color={iconColor}
+                />
+              </View>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+    </View>
+  );
+}
