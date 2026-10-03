@@ -11,6 +11,7 @@ import { StatusBar } from "expo-status-bar";
 
 import HomeScreen from "./src/screens/HomeScreen.js";
 import AddHabitScrn from "./src/screens/AddHabitScrn.js";
+import ProgressScreen from "./src/screens/ProgressScrn.js";
 
 const Tab = createBottomTabNavigator();
 
