@@ -1,4 +1,4 @@
-import {} from "react-native";
+import { View, Text, Switch, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 export default function ReminderRow({ icon, title, detail, value, onChange }) {
@@ -21,3 +21,25 @@ export default function ReminderRow({ icon, title, detail, value, onChange }) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  reminderRow: {
+    minHeight: 72,
+    flexDirection: "row",
+    alignItems: "center",
+    borderBottomWidth: 1,
+    borderBottomColor: "#E9E9EC",
+    gap: 11,
+  },
+  reminderIcon: {
+    width: 38,
+    height: 38,
+    borderRadius: 12,
+    backgroundColor: "#ECECEF",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  reminderCopy: { flex: 1 },
+  reminderTitle: { color: "#2C2D36", fontSize: 13, fontWeight: "700" },
+  reminderDetail: { color: "#85858D", fontSize: 11, marginTop: 4 },
+});
