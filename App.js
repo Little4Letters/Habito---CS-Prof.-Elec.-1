@@ -13,6 +13,7 @@ import HomeScreen from "./src/screens/HomeScreen.js";
 import AddHabitScrn from "./src/screens/AddHabitScrn.js";
 import ProgressScreen from "./src/screens/ProgressScrn.js";
 import AlertsScreen from "./src/screens/NotificationScrn.js";
+import ProfileScreen from "./src/screens/ProfileScrn.js";
 
 const Tab = createBottomTabNavigator();
 
