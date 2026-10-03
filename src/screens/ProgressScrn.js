@@ -12,6 +12,13 @@ export default function ProgressScreen({ habits }) {
     ? Math.round((complete / habits.length) * 100)
     : 0;
 
+  // Reasons about SafeAreaView and ScrollView:
+
+  // 1. SafeAreaView is used to ensure that the content is displayed within the safe area boundaries of the device
+  // 2. Avoiding notches and other screen obstructions. The ScrollView allows for vertical scrolling of the content,
+  // 3. Making it accessible on smaller screens. The Pressable components are used for interactive elements and,
+  // 4. Allowing users to select different time periods for viewing their progress.
+
   return (
     <SafeAreaView style={styles.safeArea} edges={["top"]}>
       <ScrollView
@@ -46,20 +53,24 @@ export default function ProgressScreen({ habits }) {
         <View style={styles.scorePanel}>
           <View style={styles.scoreCopy}>
             <Text style={styles.panelHeading}>Habits</Text>
+
             <View style={styles.legendRow}>
               <View
                 style={[styles.legendDot, { backgroundColor: "#F05E79" }]}
               />
               <Text style={styles.legendText}>Completed {complete}</Text>
             </View>
+
             <View style={styles.legendRow}>
               <View
                 style={[styles.legendDot, { backgroundColor: "#F5C85B" }]}
               />
+
               <Text style={styles.legendText}>
                 Remaining {Math.max(habits.length - complete, 0)}
               </Text>
             </View>
+
             <View style={styles.legendRow}>
               <View
                 style={[styles.legendDot, { backgroundColor: "#292A35" }]}
@@ -82,7 +93,9 @@ export default function ProgressScreen({ habits }) {
             </Text>
             <Text style={styles.summaryLabel}>Done {period.toLowerCase()}</Text>
           </View>
+
           <View style={styles.summaryDivider} />
+
           <View style={styles.summaryCell}>
             <Text style={styles.summaryValue}>{complete ? "4" : "0"} days</Text>
             <Text style={styles.summaryLabel}>Best streak</Text>
@@ -106,13 +119,16 @@ export default function ProgressScreen({ habits }) {
                   color={habit.color || "#4388F5"}
                 />
               </View>
+
               <Text numberOfLines={1} style={styles.progressHabitName}>
                 {habit.title}
               </Text>
+
               <Text style={styles.streakPill}>
                 {habit.completed ? "4 Days" : "2 Days"}
               </Text>
             </View>
+
             <View style={styles.progressTrack}>
               <View
                 style={[
@@ -121,6 +137,7 @@ export default function ProgressScreen({ habits }) {
                 ]}
               />
             </View>
+
             <View style={styles.weekRow}>
               {["M", "T", "W", "T", "F", "S", "S"].map((day, index) => {
                 const marked =
