@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
+import ReminderRow from "../components/ReminderSec.js";
 
 export default function AlertsScreen() {
   const [morningReminder, setMorningReminder] = useState(true);
@@ -24,6 +25,35 @@ export default function AlertsScreen() {
             </Text>
           </View>
         </View>
+
+        <Text style={styles.sectionTitle}>DAILY REMINDERS</Text>
+        <ReminderRow
+          icon="sunny-outline"
+          title="Morning check-in"
+          detail="Every day · 8:00 AM"
+          value={morningReminder}
+          onChange={setMorningReminder}
+        />
+        <ReminderRow
+          icon="moon-outline"
+          title="Evening wrap-up"
+          detail="Every day · 8:30 PM"
+          value={eveningReminder}
+          onChange={setEveningReminder}
+        />
+        <Text style={[styles.sectionTitle, styles.alertSectionTitle]}>
+          MILESTONES
+        </Text>
+        <ReminderRow
+          icon="flame-outline"
+          title="Streak reminders"
+          detail="When a streak is at risk"
+          value={streakNotice}
+          onChange={setStreakNotice}
+        />
+        <Text style={styles.localNote}>
+          Reminder preferences are saved for this preview only.
+        </Text>
       </ScrollView>
     </SafeAreaView>
   );
