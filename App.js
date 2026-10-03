@@ -167,3 +167,48 @@ export default function App() {
     </SafeAreaProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  tabDockPosition: {
+    position: "absolute",
+    left: 20,
+    right: 20,
+    alignItems: "center",
+  },
+  tabDock: {
+    height: 68,
+    width: "100%",
+    maxWidth: 440,
+    paddingHorizontal: 8,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    backgroundColor: "#20212D",
+    borderRadius: 36,
+  },
+  tabButton: {
+    flex: 1,
+    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  tabIconHit: {
+    width: 40,
+    height: 40,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  tabIconSelected: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 14,
+  },
+  addTabButton: {
+    width: 54,
+    height: 54,
+    marginTop: -18,
+    borderRadius: 27,
+    backgroundColor: "#F45F78",
+    borderWidth: 5,
+    borderColor: "#20212D",
+  },
+});
